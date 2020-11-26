@@ -1,0 +1,15 @@
+input[type=text]{
+    width:100px;
+    border:1px solid #000;
+    font-weight: bold;
+}
+
+select {
+    width:108px;
+    border:1px solid #000;
+    font-weight: bold;
+}
+
+button {
+    font-weight: bold;
+}
