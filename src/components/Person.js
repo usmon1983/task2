@@ -3,6 +3,7 @@ import './Person.css'
 
 export default function Person() {
     const firstFocusEl = useRef(null);
+    const ListFocusEl = useRef(null);
     const handleSubmit = (ev) => {
         ev.preventDefault();
         var formData = new FormData(ev.target);
@@ -18,10 +19,12 @@ export default function Person() {
         xhr.setRequestHeader('Content-type', 'application/json: charset=utf-8');
         xhr.send(json); //отправляем объект в формате json
         firstFocusEl.current.focus(); //вставим фокус на первое поле input
+        ListFocusEl.current.value = json;
     }
 
     return (
             //рисуем форму
+        <>
           <form name="person" onSubmit={handleSubmit}>  
             <input type="text" name="name" placeholder="name" ref={firstFocusEl}/><br />
             <input type="text" name="surname" placeholder="surname" /><br />
@@ -29,9 +32,12 @@ export default function Person() {
             <select name="select" placeholder='(select)'>
                 <option value="Star">✭</option>
                 <option value="Heart">❤</option>
-                <option value="Octagon">Octagon </option>
+                <option value="Octagon">Octagon</option>
             </select>
             <button>send</button>
-          </form>  
+            
+          </form>
+          {<textarea type="text" name="listForm" ref={ListFocusEl} defaultValue="List"/>}  
+        </>
       );
 }

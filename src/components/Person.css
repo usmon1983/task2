@@ -13,3 +13,12 @@ select {
 button {
     font-weight: bold;
 }
+
+textarea {
+    font-weight: bold;
+    margin-left: 200px;
+    margin-top: 0px;
+    width: 200px;
+    height: 100px;
+    resize: none;
+}
